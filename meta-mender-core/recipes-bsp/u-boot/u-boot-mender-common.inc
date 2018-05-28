@@ -33,6 +33,9 @@ do_provide_mender_defines() {
     if echo "${PN}" | fgrep "mender-auto-provided"; then
         # "mender-auto-provided" is a special recipe that has its sources
         # copied from the original U-Boot, so this step has already been done.
+	echo "ALEX"
+	echo "ALEX"
+	echo ${PN}
         exit 0
     fi
 
@@ -146,6 +149,9 @@ do_mender_uboot_auto_configure() {
     if echo "${PN}" | fgrep "mender-auto-provided"; then
         # "mender-auto-provided" is a special recipe that has its sources
         # copied from the original U-Boot, so this step has already been done.
+	echo "ALEX"
+	echo "ALEX"
+	echo ${PN}
         exit 0
     fi
 
@@ -162,9 +168,10 @@ do_mender_uboot_auto_configure() {
     # This is for diffing and displaying the patch later, if necessary.
     rm -rf ${MENDER_UBOOT_OLD_SRC}
     cp -r "${S}" ${MENDER_UBOOT_OLD_SRC}
-
+	
     env \
         BUILDCC="${BUILD_CC}" \
+	echo ${BUILDCC} \
         ./uboot_auto_configure.sh \
         --config=${UBOOT_MACHINE} \
         --src-dir=${S} \

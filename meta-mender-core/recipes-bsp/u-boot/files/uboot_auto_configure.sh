@@ -41,9 +41,12 @@ while [ -n "$1" ]; do
     case "$1" in
         --config=*)
             CONFIG="${1#--config=}"
+	    echo "ALEX"
+	    echo $CONFIG
             ;;
         --src-dir=*)
             SRC_DIR="$(readlink -f "${1#--src-dir=}")"
+	    echo $SRC_DIR
             ;;
         --tmp-dir=*)
             TMP_DIR="$(readlink -f "${1#--tmp-dir=}")"

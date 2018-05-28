@@ -1,0 +1,26 @@
+From 93f75e66a7189d865e13bd1ea141fe06b987c7e7 Mon Sep 17 00:00:00 2001
+From: Alejandro Lozano <alejandro.lozano@nxp.com>
+Date: Fri, 25 May 2018 17:48:40 +0000
+Subject: [PATCH] imx8mq_evk BOOTCOUNT
+
+---
+ include/configs/imx8mq_evk.h | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/include/configs/imx8mq_evk.h b/include/configs/imx8mq_evk.h
+index 315df99..2b4c1ce 100644
+--- a/include/configs/imx8mq_evk.h
++++ b/include/configs/imx8mq_evk.h
+@@ -196,6 +196,9 @@
+ #define CONFIG_SYS_MMC_ENV_DEV		1   /* USDHC2 */
+ #define CONFIG_MMCROOT			"/dev/mmcblk1p2"  /* USDHC2 */
+ 
++#define CONFIG_BOOTCOUNT_ENV
++#define CONFIG_BOOTCOUNT_LIMIT
++
+ /* Size of malloc() pool */
+ #define CONFIG_SYS_MALLOC_LEN		((CONFIG_ENV_SIZE + (2*1024) + (16*1024)) * 1024)
+ 
+-- 
+1.9.1
+
